@@ -1,14 +1,3 @@
-<template>
-  <div class="youtube-player">
-    <iframe
-      :src="embedUrl"
-      frameborder="0"
-      allowfullscreen
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    ></iframe>
-  </div>
-</template>
-
 <script>
 export default {
   name: "YoutubePlayer",
@@ -20,11 +9,22 @@ export default {
   },
   computed: {
     embedUrl() {
-      return `https://www.youtube.com/embed/${videoId}`;
+      return `https://www.youtube.com/embed/${this.videoId}`;
     },
   },
 };
 </script>
+
+<template>
+  <div class="youtube-player">
+    <iframe
+      :src="embedUrl"
+      frameborder="0"
+      allowfullscreen
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    ></iframe>
+  </div>
+</template>
 
 <style>
 .youtube-player {
@@ -38,7 +38,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 560;
-  height: 315;
+  width: 100%;
+  height: 100%;
 }
 </style>

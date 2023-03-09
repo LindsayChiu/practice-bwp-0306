@@ -1,10 +1,4 @@
 <script setup>
-export default {
-  components: {
-    YoutubePlayer,
-  },
-};
-
 import NavBar from "./components/NavBar.vue";
 import Banner from "./components/Banner.vue";
 import Slogan from "./components/Slogan.vue";
@@ -15,7 +9,7 @@ import YoutubePlayer from "./components/YoutubePlayer.vue";
   <NavBar />
   <Banner />
   <Slogan />
-  <YoutubePlayer videoId="vOLr8FcAh-A" />
+  <YoutubePlayer :videoId="'vOLr8FcAh-A'" />
 </template>
 
 <style>
