@@ -1,3 +1,14 @@
+<template>
+  <div class="youtube-player">
+    <iframe
+      :src="embedUrl"
+      frameborder="0"
+      allowfullscreen
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    ></iframe>
+  </div>
+</template>
+
 <script>
 export default {
   name: "YoutubePlayer",
@@ -14,17 +25,6 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div class="youtube-player">
-    <iframe
-      :src="embedUrl"
-      frameborder="0"
-      allowfullscreen
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    ></iframe>
-  </div>
-</template>
 
 <style>
 .youtube-player {

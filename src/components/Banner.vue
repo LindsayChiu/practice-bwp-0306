@@ -17,13 +17,13 @@
 
 @media screen and (max-width: 768px) {
   .banner img {
-    content: url("../assets/photo/banner-mob.jpg");
+    content: url("../assets/img/banner-mob.jpg");
   }
 }
 
 @media screen and (min-width: 769px) {
   .banner img {
-    content: url("../assets/photo/banner-pc.jpg");
+    content: url("../assets/img/banner-pc.jpg");
   }
 }
 </style>
@@ -33,7 +33,7 @@ export default {
   name: "Banner",
   data() {
     return {
-      imageSrc: "../assets/photo/banner-pc.jpg",
+      imageSrc: "../assets/img/banner-pc.jpg",
     };
   },
 };

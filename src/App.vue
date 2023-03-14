@@ -1,15 +1,27 @@
-<script setup>
+<script>
 import NavBar from "./components/NavBar.vue";
 import Banner from "./components/Banner.vue";
-import Slogan from "./components/Slogan.vue";
-import YoutubePlayer from "./components/YoutubePlayer.vue";
+import Slogan2 from "./components/Slogan2.vue";
+import TheFooter2 from "./components/TheFooter2.vue";
+import TheVideo from "./components/TheVideo.vue";
+
+export default {
+  components: {
+    NavBar,
+    Banner,
+    Slogan2,
+    TheVideo,
+    TheFooter2,
+  },
+};
 </script>
 
 <template>
   <NavBar />
   <Banner />
-  <Slogan />
-  <YoutubePlayer :videoId="'vOLr8FcAh-A'" />
+  <Slogan2 />
+  <TheVideo />
+  <TheFooter2 />
 </template>
 
 <style>
@@ -17,6 +29,7 @@ import YoutubePlayer from "./components/YoutubePlayer.vue";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  align-items: center;
 }
 
 html {
@@ -44,5 +57,12 @@ a {
   color: white;
   text-decoration: none;
   align-items: center;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  overflow: clip;
+  overflow: hidden;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="logo">
-      <img src="/src/assets/photo/bw-logo.png" alt="logo" />
+      <img src="/src/assets/img/bw-logo.png" alt="logo" />
     </div>
     <div class="menu" :class="{ active: menuOpen, mobile: isMobile }">
       <a v-for="item in items" :key="item.alt" :href="item.url">
@@ -19,7 +19,7 @@
 
 <script>
 import { ref, computed, watchEffect } from "vue";
-import lineIcon from "../assets/photo/Line_white.png";
+import lineIcon from "../assets/img/Line_white.png";
 
 export default {
   setup() {
@@ -131,7 +131,7 @@ export default {
   .menu {
     display: flex;
     /* transition: transform 0s ease-in-out; */
-    transform: translateY(-150%);
+    transform: translateY(-180%);
   }
   .menu.active {
     transition: transform 0.8s ease-in-out;
@@ -145,21 +145,5 @@ export default {
     display: flex;
     border: #fbf8f8ef 0.25px;
   }
-
-  /* .toggle span:nth-child(2) {
-    transform-origin: center;
-  }
-
-  .toggle.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-  }
-
-  .toggle.active span:nth-child(2) {
-    transform: rotate(-45deg);
-  }
-
-  .toggle.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-  } */
 }
 </style>
