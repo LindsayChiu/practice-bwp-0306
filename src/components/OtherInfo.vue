@@ -9,9 +9,13 @@
           <img class="tritonis" src="../assets/img/Tritonis.png" />
         </div>
       </div>
-      <div class="row-imagelist">
-        <div class="clo-container-wish"><ImageList /></div>
-      </div>
+      <TheRow>
+        <div class="row-imagelist">
+          <div class="clo-container-wish">
+            <ImageList></ImageList>
+          </div>
+        </div>
+      </TheRow>
       <TheVideo />
     </div>
   </div>
@@ -20,6 +24,7 @@
 <script setup>
 import ImageList from "./ImageList.vue";
 import TheVideo from "./TheVideo.vue";
+import TheRow from "./TheRow.vue";
 </script>
 
 <style scoped>
@@ -30,7 +35,7 @@ import TheVideo from "./TheVideo.vue";
 }
 .container-wish {
   width: 100%;
-
+  padding: 0 15px;
   /* margin-right: 40px;
   margin-left: 40px; */
 }
@@ -40,9 +45,9 @@ import TheVideo from "./TheVideo.vue";
   flex-wrap: wrap;
 }
 
-.row-imagelist {
+/* .row-imagelist {
   display: grid;
-}
+} */
 
 .clo-container-wish {
   flex-basis: 0;

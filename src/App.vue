@@ -4,6 +4,7 @@ import Banner from "./components/Banner.vue";
 import Slogan2 from "./components/Slogan2.vue";
 import TheFooter2 from "./components/TheFooter2.vue";
 import OtherInfo from "./components/OtherInfo.vue";
+// import ImageList from "./components/ImageList.vue";
 
 export default {
   components: {
@@ -11,8 +12,8 @@ export default {
     Banner,
     Slogan2,
     OtherInfo,
-
     TheFooter2,
+    // ImageList,
   },
 };
 </script>
@@ -21,6 +22,7 @@ export default {
   <NavBar />
   <Banner />
   <Slogan2 />
+  <!-- <ImageList /> -->
   <OtherInfo />
   <TheFooter2 />
 </template>

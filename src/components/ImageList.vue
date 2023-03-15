@@ -1,18 +1,29 @@
 <template>
-  <div class="imageList">
-    <div v-for="item in items" :key="item.id">
-      <a href="{{ item.imgLink }}"><img :src="item.src" :alt="item.title" /></a>
-      <a href="{{ item.imgLink }}"
-        ><h3>{{ item.title }}</h3></a
-      >
-    </div>
-  </div>
+  <TheRow>
+    <TheCol v-for="item in items" :key="item.id">
+      <a :href="item.imgLink">
+        <img
+          :src="item.src"
+          :alt="item.title"
+          @load="setColWidth($event.target)"
+        />
+      </a>
+      <a :href="item.imgLink">{{ item.title }} </a>
+    </TheCol>
+  </TheRow>
 </template>
 
 <script>
 import { ref } from "vue";
+import TheCol from "./TheCol.vue";
+import TheRow from "./TheRow.vue";
 
 export default {
+  components: {
+    TheRow,
+    TheCol,
+  },
+
   setup() {
     const items = ref([
       {
@@ -59,36 +70,26 @@ export default {
       },
     ]);
 
-    return { items };
+    return {
+      items,
+    };
+  },
+
+  methods: {
+    setColWidth(el) {
+      el.style.width = this.$refs.row.colWidth;
+    },
   },
 };
 </script>
 
 <style scoped>
-/* .imageList div {
-  display: flexbox;
-} */
-/* .container {
-  background-color: #1d1815;
-  flex-direction: column;
-  width: 100%;
-}
-.imageList {
-  width: calc(100% - 20px);
-  margin: 10px;
-
-  padding: 20px;
-  box-sizing: border-box;
-} */
-
-.imageList img {
-  max-width: 50%;
+img {
+  max-width: 100%;
 }
 
-/* @media screen and (max-width: 768px) {
-  .imageList {
-    width: 100%;
-    margin: 10px 0;
-  }
-} */
+div {
+  text-align: left;
+  padding: 15px;
+}
 </style>
