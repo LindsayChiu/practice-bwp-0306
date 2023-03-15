@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { ref, computed } from "vue";
+
 export default {
   name: "YoutubePlayer",
   props: {
@@ -18,10 +20,14 @@ export default {
       required: true,
     },
   },
-  computed: {
-    embedUrl() {
-      return `https://www.youtube.com/embed/${this.videoId}`;
-    },
+  setup(props) {
+    const embedUrl = computed(
+      () => `https://www.youtube.com/embed/${props.videoId}`
+    );
+
+    return {
+      embedUrl,
+    };
   },
 };
 </script>

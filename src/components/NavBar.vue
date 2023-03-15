@@ -104,7 +104,7 @@ export default {
 
 .menu a img {
   height: 25px;
-  width: 25px;
+  /* width: 25px; */
 }
 .menu a {
   margin-right: 15px;

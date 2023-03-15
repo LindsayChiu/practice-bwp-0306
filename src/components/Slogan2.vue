@@ -4,8 +4,8 @@ import YoutubePlayer from "./YoutubePlayer.vue";
 
 <template>
   <div class="background">
-    <div class="container">
-      <div class="row">
+    <div class="slogan-container">
+      <div class="slogan-row">
         <div class="slogan">
           <img
             src="../assets/img/Slogan.png"
@@ -51,7 +51,7 @@ import YoutubePlayer from "./YoutubePlayer.vue";
   background-size: cover;
   background-repeat: no-repeat;
 }
-.container {
+.slogan-container {
   display: block;
   position: relative;
   width: 100%;
@@ -62,7 +62,6 @@ import YoutubePlayer from "./YoutubePlayer.vue";
 }
 
 .slogan {
-  margin-left: 38vw;
   flex-basis: 0;
   max-width: 100%;
   padding: 0 15px;
@@ -121,9 +120,6 @@ import YoutubePlayer from "./YoutubePlayer.vue";
 
 /* 手機版樣式 */
 @media screen and (max-width: 767px) {
-  .slogan {
-    margin-left: 30vw;
-  }
   .video-container {
     box-sizing: border-box;
     background-image: url("../assets/img/Reel-mob.png");

@@ -3,14 +3,15 @@ import NavBar from "./components/NavBar.vue";
 import Banner from "./components/Banner.vue";
 import Slogan2 from "./components/Slogan2.vue";
 import TheFooter2 from "./components/TheFooter2.vue";
-import TheVideo from "./components/TheVideo.vue";
+import OtherInfo from "./components/OtherInfo.vue";
 
 export default {
   components: {
     NavBar,
     Banner,
     Slogan2,
-    TheVideo,
+    OtherInfo,
+
     TheFooter2,
   },
 };
@@ -20,7 +21,7 @@ export default {
   <NavBar />
   <Banner />
   <Slogan2 />
-  <TheVideo />
+  <OtherInfo />
   <TheFooter2 />
 </template>
 
@@ -30,6 +31,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
   align-items: center;
+  text-align: center;
 }
 
 html {
@@ -56,7 +58,6 @@ li {
 a {
   color: white;
   text-decoration: none;
-  align-items: center;
 }
 
 img {

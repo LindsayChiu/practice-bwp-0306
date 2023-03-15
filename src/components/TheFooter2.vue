@@ -9,12 +9,6 @@
   </footer>
 </template>
 
-<script>
-export default {
-  name: "TheFooter",
-};
-</script>
-
 <style scoped>
 .footer {
   position: relative;
