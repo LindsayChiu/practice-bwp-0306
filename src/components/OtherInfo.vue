@@ -9,13 +9,13 @@
           <img class="tritonis" src="../assets/img/Tritonis.png" />
         </div>
       </div>
-      <TheRow>
-        <div class="row-imagelist">
-          <div class="clo-container-wish">
-            <ImageList></ImageList>
-          </div>
+
+      <div class="row-imagelist">
+        <div class="clo-container-wish">
+          <ImageList></ImageList>
         </div>
-      </TheRow>
+      </div>
+
       <TheVideo />
     </div>
   </div>
@@ -24,7 +24,6 @@
 <script setup>
 import ImageList from "./ImageList.vue";
 import TheVideo from "./TheVideo.vue";
-import TheRow from "./TheRow.vue";
 </script>
 
 <style scoped>

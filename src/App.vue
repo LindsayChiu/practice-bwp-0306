@@ -4,16 +4,18 @@ import Banner from "./components/Banner.vue";
 import Slogan2 from "./components/Slogan2.vue";
 import TheFooter2 from "./components/TheFooter2.vue";
 import OtherInfo from "./components/OtherInfo.vue";
-// import ImageList from "./components/ImageList.vue";
+import PreSale from "./components/PreSale.vue";
+import PreSaleItem from "./components/PreSaleItem.vue";
 
 export default {
   components: {
     NavBar,
     Banner,
     Slogan2,
+    PreSale,
+
     OtherInfo,
     TheFooter2,
-    // ImageList,
   },
 };
 </script>
@@ -22,7 +24,7 @@ export default {
   <NavBar />
   <Banner />
   <Slogan2 />
-  <!-- <ImageList /> -->
+  <PreSale />
   <OtherInfo />
   <TheFooter2 />
 </template>
