@@ -1,13 +1,13 @@
 <template>
   <div class="presale">
-    <TheRow class="title"
-      ><h1>《廣論》奢摩他三經典 福智文化 12/6 殊勝出版</h1></TheRow
-    >
+    <TheRow class="title">
+      <h1>《廣論》奢摩他三經典 福智文化 12/6 殊勝出版</h1>
+    </TheRow>
     <TheRow class="subtitle">
-      <TheCol class="sub-left">預購方案，即刻啟動</TheCol>
-      <TheCol class="sub-right">
+      <div class="sub-left">預購方案，即刻啟動</div>
+      <div class="sub-right">
         2021.11.08—2021.12.05 請於各研討班．全省里仁門市、天天里仁網站登記預購
-      </TheCol>
+      </div>
     </TheRow>
     <div>
       <PreSaleItem></PreSaleItem>
@@ -19,6 +19,14 @@
 import PreSaleItem from "./PreSaleItem.vue";
 import TheCol from "./TheCol.vue";
 import TheRow from "./TheRow.vue";
+
+export default {
+  components: {
+    PreSaleItem,
+    TheCol,
+    TheRow,
+  },
+};
 </script>
 
 <style>

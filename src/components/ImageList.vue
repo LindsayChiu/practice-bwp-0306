@@ -77,7 +77,7 @@ export default {
 
   methods: {
     setColWidth(el) {
-      el.style.width = this.$refs.row.colWidth;
+      el.style.width = this.$refs.therow.colWidth;
     },
   },
 };

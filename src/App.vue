@@ -5,15 +5,17 @@ import Slogan2 from "./components/Slogan2.vue";
 import TheFooter2 from "./components/TheFooter2.vue";
 import OtherInfo from "./components/OtherInfo.vue";
 import PreSale from "./components/PreSale.vue";
-import PreSaleItem from "./components/PreSaleItem.vue";
+import Book from "./components/Book.vue";
+// import PreSaleItem from "./components/PreSaleItem.vue";
 
 export default {
   components: {
     NavBar,
     Banner,
     Slogan2,
+    Book,
     PreSale,
-
+    // PreSaleItem,
     OtherInfo,
     TheFooter2,
   },
@@ -24,6 +26,8 @@ export default {
   <NavBar />
   <Banner />
   <Slogan2 />
+  <Book />
+  <!-- <PreSaleItem /> -->
   <PreSale />
   <OtherInfo />
   <TheFooter2 />

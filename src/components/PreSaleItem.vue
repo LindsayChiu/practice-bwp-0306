@@ -1,7 +1,7 @@
 <template>
   <div>
-    <TheRow>
-      <TheCol v-for="item in items" :key="item.id">
+    <TheRow class="presaleitem">
+      <TheCol v-for="item in items" :key="item.id" class="presalecol">
         <img
           :src="item.img"
           :alt="item.title"
@@ -13,9 +13,12 @@
             {{ contentItem }}
           </li>
         </ul>
-        <h3>
-          {{ item.pricetitle }}<span>" NT$ "{{ item.pricedis }}</span
-          ><span>"&#40;原價NT$" {{ item.priceorg }} "&#41;"</span>
+        <h3 class="pricetitle">
+          {{ item.pricetitle
+          }}<span class="spandis">NT${{ item.pricedis }}</span
+          ><span class="spanorg">&#40;原價NT$</span
+          ><span class="spandelete">{{ item.priceorg }} </span
+          ><span class="spanorg">&#41;</span>
         </h3>
         <h4>{{ item.gift }}</h4>
       </TheCol>
@@ -78,6 +81,18 @@ export default {
 </script>
 
 <style scoped>
+.presaleitem {
+  text-align: left;
+  padding: 0px;
+  border: 1px solid green;
+}
+
+.presalecol {
+  text-align: left;
+  padding: 0px;
+  border: 1px solid blue;
+}
+
 img {
   max-width: 100%;
 }
@@ -85,5 +100,28 @@ img {
 div {
   text-align: left;
   padding: 15px;
+}
+
+.pricetitle {
+  color: #111;
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 6px;
+}
+
+.spandis {
+  color: #6a142a;
+  font-weight: 600;
+}
+
+.spanorg {
+  color: #5b5250;
+  font-size: 14px;
+}
+
+.spandelete {
+  color: #6a142a;
+  text-decoration: line-through;
+  font-size: 14px;
 }
 </style>
