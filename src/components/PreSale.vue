@@ -9,7 +9,7 @@
         2021.11.08—2021.12.05 請於各研討班．全省里仁門市、天天里仁網站登記預購
       </div>
     </TheRow>
-    <div>
+    <div class="presaleitem">
       <PreSaleItem></PreSaleItem>
     </div>
   </div>
@@ -42,9 +42,17 @@ export default {
 
 .title h1 {
   color: #231815;
+  padding: 10px 0 10px 10px;
   text-align: left;
-  font-size: 22px;
+  font-size: 1.4rem;
   font-weight: 800;
+}
+
+.subtitle {
+  text-align: left;
+  padding: 0 0 10px 0px;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
 }
 
 .sub-left {
@@ -55,7 +63,12 @@ export default {
 }
 
 .sub-right {
+  text-align: left;
   color: #6a142a;
   padding: 5px 20px 0;
 }
+
+/* .presaleitem {
+  border: none;
+} */
 </style>

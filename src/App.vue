@@ -66,6 +66,7 @@ li {
 a {
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 img {

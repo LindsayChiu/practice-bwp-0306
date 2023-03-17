@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ref, watch, onMounted, onUnmounted } from "vue";
+import { ref, computed, watchEffect, onMounted, onUnmounted } from "vue";
 import TheCol from "./TheCol.vue";
 
 export default {
@@ -13,23 +13,19 @@ export default {
 
   components: { TheCol },
 
-  setup() {
+  props: {
+    colCount: {
+      type: Number,
+      default: 1,
+    },
+  },
+
+  setup(props) {
     const screenWidth = ref(window.innerWidth);
-    const colCount = ref(1);
 
     const handleResize = () => {
       screenWidth.value = window.innerWidth;
     };
-
-    watch(screenWidth, (newWidth) => {
-      if (newWidth >= 1024) {
-        colCount.value = 3;
-      } else if (newWidth >= 768) {
-        colCount.value = 2;
-      } else {
-        colCount.value = 1;
-      }
-    });
 
     onMounted(() => {
       window.addEventListener("resize", handleResize);
@@ -39,19 +35,32 @@ export default {
       window.removeEventListener("resize", handleResize);
     });
 
-    return {
-      colCount,
+    const colCount = computed(() => {
+      if (screenWidth.value >= 1024) {
+        return 3;
+      } else if (screenWidth.value >= 768) {
+        return 2;
+      } else {
+        return 1;
+      }
+    });
+
+    const colWidth = computed(() => {
+      return `${100 / colCount.value}%`;
+    });
+
+    const setColWidth = (el) => {
+      el.style.width = colWidth.value;
     };
-  },
-  computed: {
-    colWidth() {
-      return `${100 / this.colCount}%`;
-    },
-  },
-  methods: {
-    setColWidth(el) {
-      el.style.width = this.colWidth;
-    },
+
+    watchEffect(() => {
+      props.colCount = colCount.value;
+    });
+
+    return {
+      colWidth,
+      setColWidth,
+    };
   },
 };
 </script>

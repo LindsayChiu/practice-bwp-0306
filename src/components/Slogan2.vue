@@ -92,6 +92,7 @@ import YoutubePlayer from "./YoutubePlayer.vue";
   padding: 22% 0 5%;
 }
 .videoinfo {
+  text-align: left;
   height: auto;
 }
 

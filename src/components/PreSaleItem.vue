@@ -1,42 +1,38 @@
 <template>
-  <div>
-    <TheRow class="presaleitem">
-      <TheCol v-for="item in items" :key="item.id" class="presalecol">
-        <img
-          :src="item.img"
-          :alt="item.title"
-          @load="setColWidth($event.target)"
-        />
-        <h2>{{ item.title }}</h2>
-        <ul>
-          <li v-for="contentItem in item.content" :key="contentItem">
-            {{ contentItem }}
-          </li>
-        </ul>
-        <h3 class="pricetitle">
-          {{ item.pricetitle
-          }}<span class="spandis">NT${{ item.pricedis }}</span
-          ><span class="spanorg">&#40;原價NT$</span
-          ><span class="spandelete">{{ item.priceorg }} </span
-          ><span class="spanorg">&#41;</span>
-        </h3>
-        <h4>{{ item.gift }}</h4>
-      </TheCol>
-    </TheRow>
+  <div class="presaleitem">
+    <div class="presalecol" v-for="item in items" :key="item.id">
+      <img
+        class="itemimg"
+        :src="item.img"
+        :alt="item.title"
+        @load="setColWidth($event.target)"
+      />
+      <p class="itemtitle">{{ item.title }}</p>
+      <ul class="itemul">
+        <li
+          class="itemli"
+          v-for="contentItem in item.content"
+          :key="contentItem"
+        >
+          {{ contentItem }}
+        </li>
+      </ul>
+      <p class="pricetitle">
+        {{ item.pricetitle }}<span class="spandis">NT${{ item.pricedis }}</span
+        ><span class="spanorg">&#40;原價NT$</span
+        ><span class="spandelete">{{ item.priceorg }} </span
+        ><span class="spanorg">&#41;</span>
+      </p>
+      <p class="itemgift">{{ item.gift }}</p>
+      <a :href="item.url"><button class="placeorder">我要請購 →</button></a>
+    </div>
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
-import TheCol from "./TheCol.vue";
-import TheRow from "./TheRow.vue";
 
 export default {
-  components: {
-    TheRow,
-    TheCol,
-  },
-
   setup() {
     const items = ref([
       {
@@ -51,6 +47,7 @@ export default {
         pricedis: "1200",
         priceorg: "1550",
         gift: "贈品：恭敬經典．金剛力心咒貼紙",
+        url: "https://bit.ly/3mpu0a8",
       },
       {
         id: 2,
@@ -65,56 +62,69 @@ export default {
         pricedis: "1500",
         priceorg: "2000",
         gift: "贈品：恭敬經典．金剛力心咒貼紙",
+        url: "https://bit.ly/3GxUMoI",
       },
     ]);
     return {
       items,
     };
   },
-
-  methods: {
-    setColWidth(el) {
-      el.style.width = this.$refs.row.colWidth;
-    },
-  },
 };
 </script>
 
 <style scoped>
-.presaleitem {
-  text-align: left;
-  padding: 0px;
-  border: 1px solid green;
-}
-
 .presalecol {
-  text-align: left;
-  padding: 0px;
-  border: 1px solid blue;
+  height: 100%;
+  color: #6a142a;
+  border: 0.5px solid #00000020;
+  border-radius: 0.25rem;
+  background-color: #fff;
 }
 
-img {
+.itemimg {
   max-width: 100%;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
-
-div {
+.itemtitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  display: block;
   text-align: left;
-  padding: 15px;
+  padding: 5% 0 3% 5%;
 }
 
+.itemul {
+  min-height: 160px;
+}
+
+.itemli {
+  list-style-type: disc;
+  list-style-position: inside;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  text-align: left;
+  padding: 0% 5% 1% 5%;
+}
 .pricetitle {
+  font-size: 1rem;
+  display: block;
   color: #111;
   font-size: 18px;
   font-weight: 600;
-  padding-right: 6px;
+  text-align: left;
+  padding-left: 5%;
 }
 
 .spandis {
+  font-size: 0.9rem;
   color: #6a142a;
   font-weight: 600;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .spanorg {
+  font-size: 1.1rem;
   color: #5b5250;
   font-size: 14px;
 }
@@ -123,5 +133,35 @@ div {
   color: #6a142a;
   text-decoration: line-through;
   font-size: 14px;
+}
+
+.itemgift {
+  color: #5b5250;
+  text-align: left;
+  padding-left: 5%;
+  font-size: 0.8rem;
+  padding-bottom: 4%;
+  padding-top: 1%;
+}
+
+.placeorder {
+  color: #fff;
+  background-color: #6a142a;
+  padding: 3% 20%;
+  border: none;
+  border-radius: 0.25rem;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  display: block;
+  width: 90%;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .presaleitem {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
 </style>

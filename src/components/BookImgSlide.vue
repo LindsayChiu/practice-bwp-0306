@@ -1,12 +1,8 @@
 <template>
   <div class="image-slider">
     <div class="info-container">
-      <span v-for="(image, index) in images" :key="image.id"
-        ><img
-          v-if="currentIndex === index"
-          src="../assets/img/Indeicator.png"
-        />{{ image.title }}</span
-      >
+      <h2>{{ currentImageTitle }}</h2>
+      <p>{{ currentImageDescription }}</p>
     </div>
 
     <div class="image-container">
@@ -15,7 +11,6 @@
         <button @click="previousImage">&#8249;</button>
         <button @click="nextImage">&#8250;</button>
       </div>
-      <a class="image-url" :href="currentImageUrl"> 更多詳細書籍資訊 → </a>
     </div>
   </div>
 </template>
@@ -31,20 +26,20 @@ export default {
       {
         id: 1,
         title: "《菩提道次第廣論四家合註白話校註集5・奢摩他》",
+        description: "This is the first image",
         src: "/src/assets/img/4-he-zhu.jpg",
-        url: "https://www.bwpublish.com/books/lrannotations-01-05",
       },
       {
         id: 2,
         title: "《菩提道次第廣論・奢摩他》校訂本",
+        description: "This is the second image",
         src: "/src/assets/img/LR.jpg",
-        url: "https://www.bwpublish.com/books/lrannotations-serenity",
       },
       {
         id: 3,
         title: "《廣論止觀初探》第一卷",
+        description: "This is the third image",
         src: "/src/assets/img/zhi-guan.jpg",
-        url: "https://www.bwpublish.com/books/serenity-insight-introduction-001",
       },
     ]);
 
@@ -56,8 +51,8 @@ export default {
       return images.value[currentIndex.value].title;
     });
 
-    const currentImageUrl = computed(() => {
-      return images.value[currentIndex.value].url;
+    const currentImageDescription = computed(() => {
+      return images.value[currentIndex.value].description;
     });
 
     const nextImage = () => {
@@ -74,7 +69,7 @@ export default {
       images,
       currentImage,
       currentImageTitle,
-      currentImageUrl,
+      currentImageDescription,
       nextImage,
       previousImage,
     };
@@ -92,36 +87,6 @@ export default {
   padding: 40px 20px;
 }
 
-.info-container {
-  font-size: 0.9rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: aliceblue;
-  padding-right: 15px;
-  padding-left: 15px;
-  display: flex;
-  align-items: stretch;
-  justify-items: space-between;
-  width: 100%;
-}
-
-.info-container img {
-  display: flex;
-  position: absolute;
-  z-index: 999;
-  margin-left: -4.5%;
-  width: 26%;
-}
-
-.info-container span {
-  flex: 1;
-  padding-left: 7%;
-  padding-right: 7%;
-  border: 1px solid white;
-  border-top: none;
-  border-bottom: none;
-}
-
 .image-container {
   position: relative;
   width: 100%;
@@ -133,6 +98,14 @@ export default {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.info-container {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: aliceblue;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .controls-container {
@@ -160,17 +133,5 @@ export default {
   background-color: transparent;
   color: #534740;
   cursor: pointer;
-}
-
-.image-url {
-  color: #6a142a;
-  font-size: 0.7rem;
-  font-weight: 600;
-  position: absolute;
-  z-index: 999;
-  width: 100%;
-  display: flex;
-  margin-left: 55px;
-  margin-top: -10%;
 }
 </style>
