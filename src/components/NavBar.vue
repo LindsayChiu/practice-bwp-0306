@@ -22,6 +22,7 @@ import { ref, computed, watchEffect } from "vue";
 import lineIcon from "../assets/img/Line_white.png";
 
 export default {
+  name: "Navbar",
   setup() {
     const items = ref([
       {
@@ -100,11 +101,13 @@ export default {
 }
 .menu {
   display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .menu a img {
   height: 25px;
-  /* width: 25px; */
+  width: 25px;
 }
 .menu a {
   margin-right: 15px;
@@ -116,26 +119,31 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 21px;
+  height: 30px;
   cursor: pointer;
+  background-color: transparent;
+  box-sizing: border-box;
 }
 
 .toggle span {
   display: block;
-  height: 3px;
+  height: 2px;
+  width: 80%;
   background-color: #fbf8f8ef;
   transition: transform 0.2s ease-in-out;
+  margin: 4px 0;
 }
 
 @media (max-width: 768px) {
   .menu {
     display: flex;
-    /* transition: transform 0s ease-in-out; */
+    transition: transform 0s ease-in-out;
     transform: translateY(-180%);
   }
   .menu.active {
     transition: transform 0.8s ease-in-out;
     transform: translateY(180%);
+    background-color: #00000088;
   }
   .menu.mobile {
     display: none;
