@@ -1,29 +1,29 @@
 <template>
-  <div class="presaleitem">
-    <div class="presalecol" v-for="item in items" :key="item.id">
+  <div class="presale-item">
+    <div class="presale-col" v-for="item in items" :key="item.id">
       <img
-        class="itemimg"
+        class="item-img"
         :src="item.img"
         :alt="item.title"
         @load="setColWidth($event.target)"
       />
-      <p class="itemtitle">{{ item.title }}</p>
-      <ul class="itemul">
+      <p class="item-title">{{ item.title }}</p>
+      <ul class="item-ul">
         <li
-          class="itemli"
+          class="item-li"
           v-for="contentItem in item.content"
           :key="contentItem"
         >
           {{ contentItem }}
         </li>
       </ul>
-      <p class="pricetitle">
-        {{ item.pricetitle }}<span class="spandis">NT${{ item.pricedis }}</span
-        ><span class="spanorg">&#40;原價NT$</span
-        ><span class="spandelete">{{ item.priceorg }} </span
-        ><span class="spanorg">&#41;</span>
+      <p class="price-title">
+        {{ item.pricetitle }}<span class="span-dis">NT${{ item.pricedis }}</span
+        ><span class="span-org">&#40;原價NT$</span
+        ><span class="span-delete">{{ item.priceorg }} </span
+        ><span class="span-org">&#41;</span>
       </p>
-      <p class="itemgift">{{ item.gift }}</p>
+      <p class="item-gift">{{ item.gift }}</p>
       <a :href="item.url"><button class="placeorder">我要請購 →</button></a>
     </div>
   </div>
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style scoped>
-.presalecol {
+.presale-col {
   height: 100%;
   color: #6a142a;
   border: 0.5px solid #00000020;
@@ -81,11 +81,11 @@ export default {
   background-color: #fff;
 }
 
-.itemimg {
+.item-img {
   max-width: 100%;
   border-radius: 0.25rem 0.25rem 0 0;
 }
-.itemtitle {
+.item-title {
   font-size: 1.1rem;
   font-weight: 800;
   display: block;
@@ -93,11 +93,11 @@ export default {
   padding: 5% 0 3% 5%;
 }
 
-.itemul {
+.item-ul {
   min-height: 160px;
 }
 
-.itemli {
+.item-li {
   list-style-type: disc;
   list-style-position: inside;
   font-size: 0.8rem;
@@ -105,7 +105,7 @@ export default {
   text-align: left;
   padding: 0% 5% 1% 5%;
 }
-.pricetitle {
+.price-title {
   font-size: 1rem;
   display: block;
   color: #111;
@@ -115,7 +115,7 @@ export default {
   padding-left: 5%;
 }
 
-.spandis {
+.span-dis {
   font-size: 0.9rem;
   color: #6a142a;
   font-weight: 600;
@@ -123,19 +123,19 @@ export default {
   padding-right: 2%;
 }
 
-.spanorg {
+.span-org {
   font-size: 1.1rem;
   color: #5b5250;
   font-size: 14px;
 }
 
-.spandelete {
+.span-delete {
   color: #6a142a;
   text-decoration: line-through;
   font-size: 14px;
 }
 
-.itemgift {
+.item-gift {
   color: #5b5250;
   text-align: left;
   padding-left: 5%;
@@ -158,7 +158,7 @@ export default {
 }
 
 @media screen and (min-width: 768px) {
-  .presaleitem {
+  .presale-item {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
