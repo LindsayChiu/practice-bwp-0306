@@ -1,21 +1,29 @@
 <template>
   <div class="image-slider">
-    <div class="info-container">
-      <span v-for="(image, index) in images" :key="image.id"
-        ><img
-          v-if="currentIndex === index"
-          src="../assets/img/Indeicator.png"
-        />{{ image.title }}</span
-      >
-    </div>
-
-    <div class="image-container">
-      <img :src="currentImage" alt="Current Image" />
-      <div class="controls-container">
-        <button @click="previousImage">&#8249;</button>
-        <button @click="nextImage">&#8250;</button>
+    <div class="pc-container">
+      <div class="info-container">
+        <span v-for="(image, index) in images" :key="image.id"
+          ><img
+            v-if="currentIndex === index"
+            src="../assets/img/Indeicator.png"
+          />{{ image.title }}</span
+        >
       </div>
-      <a class="image-url" :href="currentImageUrl"> 更多詳細書籍資訊 → </a>
+
+      <div class="image-container">
+        <img :src="currentImage" alt="Current Image" />
+        <div class="controls-container">
+          <button @click="previousImage">&#8249;</button>
+          <button @click="nextImage">&#8250;</button>
+        </div>
+        <a class="image-url" :href="currentImageUrl"> 更多詳細書籍資訊 → </a>
+      </div>
+    </div>
+    <div class="mob-container">
+      <div class="mob-img" v-for="image in images" :key="image.id">
+        <img :src="image.srcMob" alt="Mob Image" />
+        <a :href="image.url"> 更多詳細書籍資訊 → </a>
+      </div>
     </div>
   </div>
 </template>
@@ -32,18 +40,21 @@ export default {
         id: 1,
         title: "《菩提道次第廣論四家合註白話校註集5・奢摩他》",
         src: "/src/assets/img/4-he-zhu.jpg",
+        srcMob: "/src/assets/img/4hz-mob.jpg",
         url: "https://www.bwpublish.com/books/lrannotations-01-05",
       },
       {
         id: 2,
         title: "《菩提道次第廣論・奢摩他》校訂本",
         src: "/src/assets/img/LR.jpg",
+        srcMob: "/src/assets/img/lr-mob.jpg",
         url: "https://www.bwpublish.com/books/lrannotations-serenity",
       },
       {
         id: 3,
         title: "《廣論止觀初探》第一卷",
         src: "/src/assets/img/zhi-guan.jpg",
+        srcMob: "/src/assets/img/zg-mob.jpg",
         url: "https://www.bwpublish.com/books/serenity-insight-introduction-001",
       },
     ]);
@@ -172,5 +183,48 @@ export default {
   display: flex;
   margin-left: 55px;
   margin-top: -10%;
+}
+
+@media screen and (min-width: 996px) {
+  .mob-container {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 996px) {
+  .info-container {
+    display: none;
+  }
+  .mob-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pc-container {
+    display: none;
+  }
+
+  .mob-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mob-container img {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .mob-container a {
+    color: #6a142a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    position: absolute;
+    margin-top: -15%;
+    padding-left: 9%;
+  }
 }
 </style>

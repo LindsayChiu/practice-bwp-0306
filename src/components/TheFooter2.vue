@@ -16,7 +16,7 @@
   padding: 24px 0;
   bottom: 0;
   width: 100%;
-  height: auto;
+  height: 13vh;
   line-height: 1.5rem;
   background-color: #5b5250;
 }
@@ -31,7 +31,7 @@
 
 .text-left {
   float: left;
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .text-right {

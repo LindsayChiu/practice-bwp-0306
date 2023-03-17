@@ -1,16 +1,19 @@
 <template>
-  <TheRow>
-    <TheCol v-for="item in items" :key="item.id">
-      <a :href="item.imgLink">
-        <img
-          :src="item.src"
-          :alt="item.title"
-          @load="setColWidth($event.target)"
-        />
-      </a>
-      <a :href="item.imgLink">{{ item.title }} </a>
-    </TheCol>
-  </TheRow>
+  <div class="image-list">
+    <TheRow>
+      <TheCol v-for="item in items" :key="item.id">
+        <a :href="item.imgLink">
+          <img
+            class="item.img"
+            :src="item.src"
+            :alt="item.title"
+            @load="setColWidth($event.target)"
+          />
+        </a>
+        <a :href="item.imgLink">{{ item.title }} </a>
+      </TheCol>
+    </TheRow>
+  </div>
 </template>
 
 <script>
@@ -84,11 +87,11 @@ export default {
 </script>
 
 <style scoped>
-img {
+.image-list img {
   max-width: 100%;
 }
 
-div {
+.image-list {
   text-align: left;
   padding: 15px;
 }

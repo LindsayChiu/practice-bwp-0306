@@ -22,7 +22,6 @@ import { ref, computed, watchEffect } from "vue";
 import lineIcon from "../assets/img/Line_white.png";
 
 export default {
-  name: "Navbar",
   setup() {
     const items = ref([
       {
@@ -102,7 +101,6 @@ export default {
 .menu {
   display: flex;
   flex-shrink: 0;
-  white-space: nowrap;
 }
 
 .menu a img {
