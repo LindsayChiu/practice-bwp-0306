@@ -20,13 +20,15 @@
 <script>
 import { ref, computed, watchEffect } from "vue";
 import lineIcon from "../assets/img/Line_white.png";
+import fbIcon from "../assets/img/fb-icon.png";
+import insIcon from "../assets/img/ins-icon.png";
 
 export default {
   setup() {
     const items = ref([
       {
-        img: lineIcon,
-        alt: "lineIcon",
+        img: fbIcon,
+        alt: "fbIcon",
         url: "https://example.com/1",
       },
       {
@@ -35,8 +37,8 @@ export default {
         url: "https://example.com/2",
       },
       {
-        img: lineIcon,
-        alt: "lineIcon",
+        img: insIcon,
+        alt: "insIcon",
         url: "https://example.com/3",
       },
       {
