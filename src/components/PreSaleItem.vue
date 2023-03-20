@@ -79,6 +79,7 @@ export default {
   border: 0.5px solid #00000020;
   border-radius: 0.25rem;
   background-color: #fff;
+  margin-bottom: 20px;
 }
 
 .item-img {

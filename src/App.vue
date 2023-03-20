@@ -46,6 +46,13 @@ html {
   line-height: 1.5;
 }
 
+body > * {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -68,6 +75,7 @@ a {
 }
 
 img {
+  max-width: 100%;
   vertical-align: middle;
   border-style: none;
   overflow: clip;

@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" :class="{ active: menuOpen }">
     <div class="logo">
       <img src="/src/assets/img/bw-logo.png" alt="logo" />
     </div>
@@ -133,15 +133,18 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .navbar.active {
+    padding-bottom: 60px;
+    background-color: #00000088;
+  }
+
   .menu {
-    display: flex;
-    transition: transform 0s ease-in-out;
-    transform: translateY(-180%);
+    display: none;
   }
   .menu.active {
-    transition: transform 0.8s ease-in-out;
+    display: flex;
+    /* transition: transform 0.8s ease-in-out; */
     transform: translateY(180%);
-    background-color: #00000088;
   }
   .menu.mobile {
     display: none;
